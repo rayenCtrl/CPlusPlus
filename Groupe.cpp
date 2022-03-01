@@ -12,9 +12,6 @@ ListeModules(),ListeEtudiants()
 {
 }
 
-Groupe::~Groupe()
-{
-}
 
 void Groupe::Print()
 {

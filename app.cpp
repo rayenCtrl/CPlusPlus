@@ -1,8 +1,11 @@
+#include"Person.cpp"
+#include"Etudiant.cpp"
 #include"Enseignant.cpp"
 #include"Matiere.cpp"
+#include"GroupeModule.cpp"
 #include"Groupe.cpp"
-//#include"Etudiant.cpp"
-//#include"GroupeModule.cpp"
+
+
 int main()
 {
 
@@ -27,18 +30,19 @@ int main()
     GroupeModule GM1("00","Mathematique",2.1,TabM);
     GroupeModule GM2("01","Langue",1.0,TabM);
     vector<GroupeModule>Tmod;
-    Add(Tmod,GM1);
-    Add(Tmod,GM2);
+    Add(Tmod,GM1); 
+
+    Add(Tmod,GM2); 
+
     Del(Tmod,GM2);
     Tmod[1].Print();
-
     Groupe Gr1(17,"string","string","string","string",Tmod,TabE);
     Groupe Gr2(19,"str","str","str","str",Tmod,TabE);
     vector<Groupe>ListGr;
     Add(ListGr,Gr1);
     Add(ListGr,Gr2);
-
-
+    Del(ListGr,Gr2);
+    ListGr[0].Print();
 
     return 0;
 }

@@ -9,9 +9,6 @@ Matiere::Matiere()
 {
 }
 
-Matiere::~Matiere()
-{
-}
 
 string Matiere::getId()
 {

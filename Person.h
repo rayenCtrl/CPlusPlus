@@ -1,8 +1,12 @@
+#ifndef Person_H
+#define Person_H
+
 #include<iostream>
 #include<string>
 #include<vector>
 using namespace std;
 
+#pragma once
 
 class Person
 {
@@ -15,9 +19,9 @@ private:
 public:
     Person(int,string,string,string);
     Person();
-    ~Person();
     virtual void Print();
     int getId();
     string getName();
 
 };
+#endif

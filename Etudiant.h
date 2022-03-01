@@ -1,5 +1,9 @@
-#include"Person.cpp"
+#ifndef Etudiant_H
+#define Etudiant_H
 
+#include"Person.h"
+
+#pragma once
 
 class Etudiant:public Person
 {
@@ -8,7 +12,10 @@ private:
 public:
     Etudiant(int,int,string,string,string);
     Etudiant();
-    ~Etudiant();
     void Print();
-
+    
 };
+int Search(vector<Etudiant>,int);
+    void Add(vector<Etudiant>&,Etudiant);
+    void Del(vector<Etudiant>&,Etudiant);
+#endif

@@ -10,9 +10,6 @@ Person::Person(int id,string nm,string pnm,string ml)
 {
 }
 
-Person::~Person()
-{
-}
 
 void Person::Print()
 {

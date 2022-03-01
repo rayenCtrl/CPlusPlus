@@ -9,10 +9,6 @@ GroupeModule::GroupeModule()
 {
 }
 
-GroupeModule::~GroupeModule()
-{
-}
-
 string GroupeModule::getId()
 {
     return idGM;

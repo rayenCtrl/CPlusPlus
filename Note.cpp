@@ -10,9 +10,6 @@ Note::Note()
 {
 }
 
-Note::~Note()
-{
-}
 
 void Note::Print()
 {

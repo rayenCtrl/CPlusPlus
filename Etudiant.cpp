@@ -10,10 +10,6 @@ Etudiant::Etudiant():Person()
 {
 }
 
-Etudiant::~Etudiant()
-{
-    
-}
 
 void Etudiant::Print()
 {

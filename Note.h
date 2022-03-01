@@ -1,8 +1,15 @@
+#ifndef Note_H
+#define Note_H
+
 #include"Etudiant.cpp"
 #include"Matiere.cpp"
 #include<iostream>
 #include<string>
 using namespace std;
+
+#pragma once
+
+
 
 
 class Note
@@ -15,7 +22,7 @@ private:
 public:
     Note(Matiere, Etudiant, float, string);
     Note();
-    ~Note();
     void Print();
 
 };
+#endif
