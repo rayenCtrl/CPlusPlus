@@ -22,7 +22,7 @@ public:
     void Print();
     
 };
-int Search(vector<Matiere>,string);
+    int Search(vector<Matiere>,string);
     void Add(vector<Matiere>&,Matiere); 
     void Del(vector<Matiere>&,Matiere);
 #endif

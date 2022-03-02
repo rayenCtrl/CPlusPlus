@@ -12,10 +12,9 @@ ListeModules(),ListeEtudiants()
 {
 }
 
-
 void Groupe::Print()
 {
-    cout<<num_G<<""<<idGrp<<""<<niveau<<""<<diplome<<""<<specialite<<endl;
+    cout<<num_G<<" "<<idGrp<<" "<<niveau<<" "<<diplome<<" "<<specialite<<endl;
 }
 
 string Groupe::getId()

@@ -10,11 +10,10 @@ Etudiant::Etudiant():Person()
 {
 }
 
-
 void Etudiant::Print()
 {
+    cout<<num_insc<<" ";
     Person::Print();
-    cout<<num_insc;
 }
 
 int Search(vector<Etudiant>TabE,int id)

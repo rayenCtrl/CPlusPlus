@@ -18,18 +18,16 @@ private:
     string idGrp;
     string niveau;
     string diplome;
-    string specialite;
-    vector<GroupeModule> ListeModules; 
-    vector<Etudiant> ListeEtudiants;    
+    string specialite;    
 public:
     Groupe(int,string,string,string,string,vector<GroupeModule>,vector<Etudiant>);
     Groupe();
     void Print();
-    string getId();
-    
+    string getId();  
+    vector<GroupeModule> ListeModules; 
+    vector<Etudiant> ListeEtudiants;
 };
-
-int Search(vector<Groupe>,string);
+    int Search(vector<Groupe>,string);
     void Add(vector<Groupe>&,Groupe);
     void Del(vector<Groupe>&,Groupe);
 #endif

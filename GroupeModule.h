@@ -16,15 +16,14 @@ private:
     string idGM;
     string nomGM;
     float coefGM;
-    vector<Matiere>ListeMat;
 public:
     GroupeModule(string, string,float,vector<Matiere>);
     GroupeModule();
     string getId();
     void Print();
-    
+    vector<Matiere>ListeMat;
 };
-int Search(vector<GroupeModule>,string);
+    int Search(vector<GroupeModule>,string);
     void Add(vector<GroupeModule>&,GroupeModule);
     void Del(vector<GroupeModule>&,GroupeModule);
 #endif

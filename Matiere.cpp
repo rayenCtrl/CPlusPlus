@@ -17,7 +17,7 @@ string Matiere::getId()
 
 void Matiere::Print()
 {
-    cout<<idMat<<""<<nomMat<<""<<coef<<endl;
+    cout<<idMat<<" "<<nomMat<<" "<<coef<<endl;
     Ens.Print();
 }
 

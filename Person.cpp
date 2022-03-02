@@ -13,8 +13,7 @@ Person::Person(int id,string nm,string pnm,string ml)
 
 void Person::Print()
 {
-    cout<<id<<" "<<nom<<" "<<prenom<<endl;
-    cout<<mail<<endl;
+    cout<<id<<" "<<nom<<" "<<prenom<<" "<<mail<<endl;
 }
 
 int Person::getId()

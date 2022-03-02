@@ -13,8 +13,8 @@ Enseignant::Enseignant():Person()
 
 void Enseignant::Print()
 {
+    cout<<CNSS<<" ";
     Person::Print();
-    cout<<CNSS;
 }
 
 int Search(vector<Enseignant>TabE,int id)

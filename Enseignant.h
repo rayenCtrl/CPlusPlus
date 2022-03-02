@@ -15,8 +15,7 @@ public:
     void Print();
     
 };
-
-int Search(vector<Enseignant>,int);
+    int Search(vector<Enseignant>,int);
     void Add(vector<Enseignant>&,Enseignant);
     void Del(vector<Enseignant>&,Enseignant);
 #endif

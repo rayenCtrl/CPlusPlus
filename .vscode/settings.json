@@ -33,6 +33,8 @@
     "string_view": "cpp",
     "initializer_list": "cpp",
     "utility": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "algorithm": "cpp",
+    "*.tcc": "cpp"
   }
 }
