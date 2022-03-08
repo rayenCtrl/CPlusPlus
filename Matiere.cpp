@@ -15,10 +15,19 @@ string Matiere::getId()
     return this->idMat;
 }
 
+string Matiere::getNmMa()
+{
+    return nomMat;
+}
 void Matiere::Print()
 {
     cout<<idMat<<" "<<nomMat<<" "<<coef<<endl;
     Ens.Print();
+}
+
+float Matiere::getCoef()
+{
+    return this->coef;
 }
 
 int Search(vector<Matiere>TabM,string id)
@@ -49,14 +58,11 @@ void Add(vector<Matiere>&TabM,Matiere x)
 
 void Del(vector<Matiere>&TabM,Matiere x)
 {
-    if (Search(TabM,x.getId())!=-1)
+    for (int i = 0; i < TabM.size(); i++)
     {
-        vector<Matiere>::iterator i;
-        i=TabM.begin();
-        while ((i<TabM.end()) && ((*i).getId()!=x.getId()))
+        if(TabM[i].getId()==x.getId())
         {
-            i++;
+            TabM.erase(TabM.begin()+i);
         }
-        TabM.erase(i);
-    }
+    }  
 }

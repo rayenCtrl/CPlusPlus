@@ -13,7 +13,7 @@ public:
     Etudiant(int,int,string,string,string);
     Etudiant();
     void Print();
-    
+    int getNinsc();
 };
     int Search(vector<Etudiant>,int);
     void Add(vector<Etudiant>&,Etudiant);

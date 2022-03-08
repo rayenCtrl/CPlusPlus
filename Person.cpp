@@ -20,7 +20,10 @@ int Person::getId()
 {
     return this->id;
 }
-
+string Person::getPrenom()
+{
+    return this->prenom;
+}
 
 string Person::getName()
 {

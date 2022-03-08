@@ -50,14 +50,13 @@ void Add(vector<Groupe>&ListGr,Groupe x)
 
 void Del(vector<Groupe>&ListGr,Groupe x)
 {
-    if (Search(ListGr,x.getId())!=-1)
+    for (int i = 0; i < ListGr.size(); i++)
     {
-        vector<Groupe>::iterator i;
-        i=ListGr.begin();
-        while ((i<ListGr.end()) && ((*i).getId()!=x.getId()))
+        if (ListGr[i].getId()==x.getId())
         {
-            i++;
+            ListGr.erase(ListGr.begin()+i);
         }
-        ListGr.erase(i);
+        
     }
+    
 }

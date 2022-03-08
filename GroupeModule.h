@@ -17,10 +17,12 @@ private:
     string nomGM;
     float coefGM;
 public:
-    GroupeModule(string, string,float,vector<Matiere>);
+    GroupeModule(string, string,vector<Matiere>);
     GroupeModule();
-    string getId();
     void Print();
+    string getId();
+    string getNmGM();
+    float getCoef();
     vector<Matiere>ListeMat;
 };
     int Search(vector<GroupeModule>,string);

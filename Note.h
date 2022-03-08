@@ -25,7 +25,13 @@ public:
     Matiere getMat();
     Etudiant getEtu();
     string getTyp();
+    float getNote();
 };
 void Add(vector<Note>&,vector<Groupe>&,Note );
 void Del(vector<Note>&,Note);
+float MoyMat(Etudiant,Matiere,vector<Note>);
+float MoyGM(GroupeModule, Etudiant,vector<Note>);
+float Moyenne(vector<GroupeModule>,Etudiant,vector<Note>);
+void Result(float);
+void Mention(float );
 #endif

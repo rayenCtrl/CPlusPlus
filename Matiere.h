@@ -18,9 +18,10 @@ private:
 public:
     Matiere(string,string,float,Enseignant);
     Matiere();
-    string getId();
     void Print();
-    
+    string getId();
+    string getNmMa();
+    float getCoef();
 };
     int Search(vector<Matiere>,string);
     void Add(vector<Matiere>&,Matiere); 

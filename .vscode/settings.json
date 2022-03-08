@@ -35,6 +35,9 @@
     "utility": "cpp",
     "string": "cpp",
     "algorithm": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "vector": "cpp",
+    "iomanip": "cpp",
+    "ostream": "cpp"
   }
 }

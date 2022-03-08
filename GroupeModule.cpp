@@ -1,8 +1,14 @@
 #include "GroupeModule.h"
 
-GroupeModule::GroupeModule(string idGM,string nGM, float cfGM,vector<Matiere> LMa)
-:idGM(idGM),nomGM(nGM),coefGM(cfGM),ListeMat(LMa)
+GroupeModule::GroupeModule(string idGM,string nGM,vector<Matiere> LMa)
+:idGM(idGM),nomGM(nGM),ListeMat(LMa)
 {    
+    float s=0.0;
+    for (int i = 0; i < LMa.size(); i++)
+    {
+        s+=LMa[i].getCoef();
+    }
+    this->coefGM=s;
 }
 GroupeModule::GroupeModule()
 :idGM(""),nomGM(""),coefGM(0.0),ListeMat()
@@ -14,9 +20,19 @@ string GroupeModule::getId()
     return idGM;
 }
 
+string GroupeModule::getNmGM()
+{
+    return nomGM;
+}
+
 void GroupeModule::Print()
 {
     cout<<idGM<<""<<nomGM<<""<<coefGM<<endl;
+}
+
+float GroupeModule::getCoef()
+{
+    return this->coefGM;
 }
 
 int Search(vector<GroupeModule>Tmod,string id)
@@ -47,14 +63,11 @@ void Add(vector<GroupeModule>&Tmod,GroupeModule x)
 
 void Del(vector<GroupeModule>&Tmod,GroupeModule x)
 {
-    if (Search(Tmod,x.getId())!=-1)
+    for (int i = 0; i < Tmod.size(); i++)
     {
-        vector<GroupeModule>::iterator i;
-        i=Tmod.begin();
-        while ((i<Tmod.end()) && ((*i).getId()!=x.getId()))
+        if (Tmod[i].getId()==x.getId())
         {
-            i++;
+            Tmod.erase(Tmod.begin()+i);
         }
-        Tmod.erase(i);
     }
 }

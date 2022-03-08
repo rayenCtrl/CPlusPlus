@@ -34,6 +34,11 @@ string Note::getTyp()
     return this->type;
 }
 
+float Note::getNote()
+{
+    return this->note;
+}
+
 void Add(vector<Note>&ListeN,vector<Groupe>&ListGr,Note x) 
 {
     int flag=0;
@@ -76,17 +81,79 @@ void Add(vector<Note>&ListeN,vector<Groupe>&ListGr,Note x)
 
 void Del(vector<Note>&ListeN,Note x)
 {
-    
-        vector<Note>::iterator i;
-        i=ListeN.begin();
-        while ((i<ListeN.end()) &&
-        ((*i).getMat().getId() != x.getMat().getId())&& 
-        ((*i).getEtu().getId() != x.getEtu().getId())&&
-        ((*i).getTyp() != x.getTyp())
-        )
+    for (int i = 0; i < ListeN.size(); i++)
+    {
+        if ((ListeN[i].getEtu().getId()==x.getEtu().getId()) 
+        &&ListeN[i].getMat().getId()==x.getMat().getId() 
+        && ListeN[i].getTyp()==x.getTyp()) 
         {
-            i++;
+            ListeN.erase(ListeN.begin()+i);
+        }        
+    }   
+}
+
+float MoyMat(Etudiant e,Matiere m,vector<Note>ListeN)
+{ 
+    float sum=0;
+    int nbN=0;
+    float moy=0;
+    for (int k = 0; k < ListeN.size(); k++)
+        {
+            if (e.getId()==ListeN[k].getEtu().getId() && m.getId()==ListeN[k].getMat().getId() )
+            {
+                sum+=ListeN[k].getNote();
+                nbN++;
+            }
         }
-        ListeN.erase(i);
+    return (moy=sum/nbN);
+}
+
+float MoyGM(GroupeModule Gm, Etudiant e,vector<Note>ListeN)
+{
+    float sum=0;
+    float coef=0.0;
+    for (int i = 0; i < Gm.ListeMat.size(); i++)
+    {
+        sum+=MoyMat(e,Gm.ListeMat[i],ListeN)*Gm.ListeMat[i].getCoef();
+        coef+=Gm.ListeMat[i].getCoef();
+    }
+    return sum/coef ;
+}
+
+float Moyenne(vector<GroupeModule>Tmod,Etudiant e,vector<Note>ListeN)
+{
+    float moyenne=0;
+    float coef=0.0;
+    for (int i = 0; i < Tmod.size(); i++)
+    {
+        moyenne+=MoyGM(Tmod[i],e,ListeN)*Tmod[i].getCoef();
+        coef+=Tmod[i].getCoef();
+    }
+    return moyenne/coef ;
+}
+
+void Result(float Moyenne)
+{
+    (Moyenne>=10) ? cout<<"Admis " : cout<<"Ajourne " ; 
+}
+
+void Mention(float Moyenne)
+{
+    if(Moyenne>=10 && Moyenne<12)
+    {
+        cout<<"Passable";
+    }else if (Moyenne>=12 && Moyenne<14)
+    {
+        cout<<"Assez Bien";
+    }else if (Moyenne>=14 && Moyenne<16)
+    {
+        cout<<"Bien";
+    }else if (Moyenne>=16 && Moyenne<18)
+    {
+        cout<<"Très Bien";
+    }else if (Moyenne>=18 && Moyenne<20)
+    {
+        cout<<"Excellent";
+    }
     
 }

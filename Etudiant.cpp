@@ -16,6 +16,11 @@ void Etudiant::Print()
     Person::Print();
 }
 
+int Etudiant::getNinsc()
+{
+    return this->num_insc;
+}
+
 int Search(vector<Etudiant>TabE,int id)
 {
     for (int i = 0; i < TabE.size(); i++)
@@ -44,14 +49,11 @@ void Add(vector<Etudiant>&TabE,Etudiant x)
 
 void Del(vector<Etudiant>&TabE,Etudiant x)
 {
-    if (Search(TabE,x.getId())!=-1)
+    for (int i = 0; i < TabE.size(); i++)
     {
-        vector<Etudiant>::iterator i;
-        i=TabE.begin();
-        while ((i<TabE.end()) && ((*i).getId()!=x.getId()))
+        if(TabE[i].getId()==x.getId())
         {
-            i++;
+            TabE.erase(TabE.begin()+i);
         }
-        TabE.erase(i);
-    }
+    } 
 }

@@ -22,6 +22,6 @@ public:
     virtual void Print();
     int getId();
     string getName();
-
+    string getPrenom();
 };
 #endif

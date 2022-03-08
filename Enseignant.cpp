@@ -45,14 +45,11 @@ void Add(vector<Enseignant>&TabE,Enseignant x)
 
 void Del(vector<Enseignant>&TabE,Enseignant x)
 {
-    if (Search(TabE,x.getId())!=-1)
+    for (int i = 0; i < TabE.size(); i++)
     {
-        vector<Enseignant>::iterator i;
-        i=TabE.begin();
-        while ((i<TabE.end()) && ((*i).getId()!=x.getId()))
+        if(TabE[i].getId()==x.getId())
         {
-            i++;
+            TabE.erase(TabE.begin()+i);
         }
-        TabE.erase(i);
-    }
+    }  
 }
